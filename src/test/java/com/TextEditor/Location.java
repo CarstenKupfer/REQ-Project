@@ -9,6 +9,11 @@ public class Location {
 
     public Location(){}
 
+    public Location(String name){
+        this.name = name;
+        status = "new";
+    }
+
     public Location(String name,double Longitude, double Altitude)
     {
         this.name = name;
@@ -30,12 +35,15 @@ public class Location {
     }
 
     public void Setname (String name) {this.name = name;}
+    public void SetLongitude(double Longitude) {this.Longitude = Longitude;}
+    public void SetAltitude(double Altitude) {this.Altitude = Altitude;}
 
     public void addfeature(String Type, String ChargerID,int number)
     {
         Chargers[number] = new Charger(ChargerID,Type);
         this.status="featureactive";
     }
+
 
     public void delete(){this.status = "deleted";}
 
@@ -47,6 +55,11 @@ public class Location {
         }
     }
 
+    public String getStatus () {return this.status;}
+    public String getName () {return this.name;}
+    public double getAltitude() {return this.Altitude;}
+    public double getLongitude() {return this.Longitude;}
+    public Charger[] getChargers() {return this.Chargers;}
 
     @Override
     public String toString() {
