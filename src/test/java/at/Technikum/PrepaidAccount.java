@@ -1,4 +1,4 @@
-package com.TextEditor;
+package at.Technikum;
 
 public class PrepaidAccount {
     public String accountID;

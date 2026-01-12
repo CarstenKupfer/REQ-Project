@@ -1,4 +1,4 @@
-package com.TextEditor;
+package at.Technikum;
 
 import org.junit.platform.suite.api.ConfigurationParameter;
 import org.junit.platform.suite.api.IncludeEngines;
@@ -10,8 +10,8 @@ import static io.cucumber.junit.platform.engine.Constants.PLUGIN_PROPERTY_NAME;
 
 @Suite
 @IncludeEngines("cucumber")
-@SelectPackages("com.TextEditor")
+@SelectPackages("at.Technikum")
 @ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "pretty")
-@ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "com.TextEditor")
+@ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "at.Technikum")
 public class RunCucumberTest {
 }

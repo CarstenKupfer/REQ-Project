@@ -1,4 +1,4 @@
-package com.TextEditor;
+package at.Technikum;
 
 public class Charger {
     public String ChargerID;

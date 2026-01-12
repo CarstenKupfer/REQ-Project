@@ -1,4 +1,4 @@
-package com.TextEditor;
+package at.Technikum;
 
 public class Location {
     public String name;
@@ -6,6 +6,8 @@ public class Location {
     public double Longitude;
     public double Altitude;
     public Charger[] Chargers = new Charger [10];
+    public double acPrice;
+    public double dcPrice;
 
     public Location(){}
 

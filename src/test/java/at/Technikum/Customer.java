@@ -1,12 +1,12 @@
-package com.TextEditor;
+package at.Technikum;
 
 public class Customer {
     public String CustomerID;
     public String name;
 
-    public void Customer(){}
+    public Customer(){}
 
-    public void Customer (String name,String CustomerID) {this.name = name; this.CustomerID = CustomerID;}
+    public Customer (String name,String CustomerID) {this.name = name; this.CustomerID = CustomerID;}
 
 
     public String getCustomerID () {return this.CustomerID;}
