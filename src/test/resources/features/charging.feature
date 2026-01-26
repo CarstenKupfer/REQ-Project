@@ -18,3 +18,14 @@ Feature: Vehicle Charging - Start Charging and Deduct Balance
     Then charging is rejected
     And the charger "AC1" status is "out_of_order"
     And the customer "C1" balance is 20
+
+  Scenario: charging is rejected if customer has no balance
+    Given a customer "C0" exists with name "Bob" and balance 0
+    And a location "Vienna Center" exists
+    And the owner sets AC price 0.50 and DC price 0.80 for location "Vienna Center"
+    And an AC charger "AC1" exists at location "Vienna Center" with status "free"
+    When customer "C0" tries to start charging at "AC1" for 1 kWh at location "Vienna Center"
+    Then charging is rejected
+    And the charger "AC1" status is "free"
+    And the customer "C0" balance is 0
+

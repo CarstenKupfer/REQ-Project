@@ -19,10 +19,12 @@ public class LocationManager {
    }
 
     public void setPrices(String locationName, double ac, double dc) {
-        Location l = getLocation(locationName);
-        if (l == null) throw new IllegalStateException("Location not found");
-        l.acPrice = ac;
-        l.dcPrice = dc;
+       if (ac < 0 || dc < 0) throw new IllegalStateException("Rejected");
+
+       Location l = getLocation(locationName);
+       if (l == null) throw new IllegalStateException("Location not found");
+       l.acPrice = ac;
+       l.dcPrice = dc;
     }
 
     public double getAcPrice(String locationName) {
@@ -44,6 +46,7 @@ public class LocationManager {
         for (int i = 0; i < l.Chargers.length; i++) {
             if (l.Chargers[i] == null) {
                 l.Chargers[i] = new Charger(chargerId, type);
+                l.status = "featureactive";
                 return;
             }
         }
@@ -74,6 +77,19 @@ public class LocationManager {
             }
         }
         return null;
+    }
+
+    public void removeCharger(String locationName, String chargerId) {
+        Location l = getLocation(locationName);
+        if (l == null) throw new IllegalStateException("Location not found");
+
+        for (int i = 0; i < l.Chargers.length; i++) {
+            if (l.Chargers[i] != null && l.Chargers[i].ChargerID.equals(chargerId)) {
+                l.Chargers[i] = null;
+                return;
+            }
+        }
+        throw new IllegalStateException("Charger not found");
     }
 }
 

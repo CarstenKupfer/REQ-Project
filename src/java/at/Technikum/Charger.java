@@ -5,7 +5,6 @@ public class Charger {
     public String Type;
     public String Status;
 
-    public Charger () {}
     public Charger (String ChargerID, String Type)
     {
         this.ChargerID=ChargerID;

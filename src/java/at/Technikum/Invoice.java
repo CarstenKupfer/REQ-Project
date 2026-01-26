@@ -5,7 +5,9 @@ public class Invoice {
     public String CreationDate;
     public double totalCost;
     public String Status;
-
-    public String overlookInvoicestatus() {return this.Status;}
-     }
+    public String CustomerID;
+    public String LocationName;
+    public String ChargerID;
+    public int kWh;
+}
 
